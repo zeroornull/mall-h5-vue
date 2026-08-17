@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "oxc", "import", "promise", "vue"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-debugger": "error",
+    "eqeqeq": ["error", "smart"],
+    "import/no-unassigned-import": [
+      "warn",
+      { "allow": ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less", "lib-flexible", "vant/es/*/style"] }
+    ]
+  },
+  "ignorePatterns": ["dist/**", "public/**", "node_modules/**"]
+}
