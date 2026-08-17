@@ -17,6 +17,9 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SimpleHeader: typeof import('./components/SimpleHeader.vue')['default']
     Swiper: typeof import('./components/Swiper.vue')['default']
+    VanButton: typeof import('vant/es')['Button']
+    VanField: typeof import('vant/es')['Field']
+    VanForm: typeof import('vant/es')['Form']
     VanIcon: typeof import('vant/es')['Icon']
     VueImageVerify: typeof import('./components/VueImageVerify.vue')['default']
   }
