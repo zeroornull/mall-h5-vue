@@ -16,17 +16,11 @@
       class="header-side"
       @click="goBack"
     />
-    <span
-      v-else
-      class="header-side"
-    />
+    <span v-else class="header-side" />
     <div class="simple-header-name">
       {{ name }}
     </div>
-    <van-icon
-      name="ellipsis"
-      class="header-side header-side--more"
-    />
+    <van-icon name="ellipsis" class="header-side header-side--more" />
   </header>
   <div class="header-placeholder" />
 </template>

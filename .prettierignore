@@ -1,0 +1,5 @@
+dist/
+# unplugin-vue-components 自动生成
+src/components.d.ts
+# 省市区静态数据（约 150KB），格式化只会产生无意义的巨型 diff
+src/utils/tdist.ts

@@ -15,7 +15,8 @@ export function getQueryString(name: string): string | null {
   return new URLSearchParams(window.location.search).get(name)
 }
 
-export const getLocal = (name: string): string | null => localStorage.getItem(name)
+export const getLocal = (name: string): string | null =>
+  localStorage.getItem(name)
 
 export const setLocal = (name: string, value: string): void => {
   localStorage.setItem(name, value)

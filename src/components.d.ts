@@ -18,5 +18,6 @@ declare module 'vue' {
     SimpleHeader: typeof import('./components/SimpleHeader.vue')['default']
     Swiper: typeof import('./components/Swiper.vue')['default']
     VanIcon: typeof import('vant/es')['Icon']
+    VueImageVerify: typeof import('./components/VueImageVerify.vue')['default']
   }
 }

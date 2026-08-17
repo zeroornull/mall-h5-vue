@@ -58,10 +58,24 @@ instance.interceptors.response.use((res) => {
 
 // 响应拦截器已把 AxiosResponse 解包成 ApiResponse，这里重新声明方法签名以获得准确类型
 interface Request {
-  get<T = unknown>(url: string, config?: AxiosRequestConfig): Promise<ApiResponse<T>>
-  post<T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<ApiResponse<T>>
-  put<T = unknown>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<ApiResponse<T>>
-  delete<T = unknown>(url: string, config?: AxiosRequestConfig): Promise<ApiResponse<T>>
+  get<T = unknown>(
+    url: string,
+    config?: AxiosRequestConfig,
+  ): Promise<ApiResponse<T>>
+  post<T = unknown>(
+    url: string,
+    data?: unknown,
+    config?: AxiosRequestConfig,
+  ): Promise<ApiResponse<T>>
+  put<T = unknown>(
+    url: string,
+    data?: unknown,
+    config?: AxiosRequestConfig,
+  ): Promise<ApiResponse<T>>
+  delete<T = unknown>(
+    url: string,
+    config?: AxiosRequestConfig,
+  ): Promise<ApiResponse<T>>
 }
 
 const request = instance as unknown as Request

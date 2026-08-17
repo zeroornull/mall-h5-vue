@@ -34,7 +34,9 @@ export function getDefaultAddress() {
 
 export function getAddressList() {
   // 原实现把分页参数误当成 axios 配置传入（服务端实际收不到），这里改为正确的 params
-  return request.get<Address[]>('/address', { params: { pageNumber: 1, pageSize: 1000 } })
+  return request.get<Address[]>('/address', {
+    params: { pageNumber: 1, pageSize: 1000 },
+  })
 }
 
 export function getAddressDetail(id: number | string) {

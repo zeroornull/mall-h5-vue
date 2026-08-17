@@ -2,6 +2,7 @@ import { globalIgnores } from 'eslint/config'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import pluginVue from 'eslint-plugin-vue'
 import pluginOxlint from 'eslint-plugin-oxlint'
+import skipFormatting from 'eslint-config-prettier/flat'
 
 // 分工：oxlint 负责 JS/TS 正确性检查（快），ESLint 负责 Vue 模板和 Vue 专属规则
 export default defineConfigWithVueTs(
@@ -27,4 +28,7 @@ export default defineConfigWithVueTs(
 
   // 根据 .oxlintrc.json 自动关闭与 oxlint 重复的规则，必须放在最后
   ...pluginOxlint.buildFromOxlintConfigFile('./.oxlintrc.json'),
+
+  // 关闭与 Prettier 冲突的格式类规则，避免 lint 和格式化互相打架
+  skipFormatting,
 )
