@@ -16,10 +16,10 @@ export default defineConfigWithVueTs(
   vueTsConfigs.recommended,
 
   {
-    // 路由页面沿用原项目的单词文件名（Home.vue、Cart.vue 等），
-    // 它们只经路由挂载、不会当作标签使用，不存在与原生元素混淆的问题
-    name: 'app/views-allow-single-word-names',
-    files: ['src/views/*.vue'],
+    // 路由页面与个别公共组件（Swiper）沿用原项目的单词文件名，
+    // 不会与现有或未来的原生 HTML 元素混淆
+    name: 'app/allow-single-word-names',
+    files: ['src/views/*.vue', 'src/components/Swiper.vue'],
     rules: {
       'vue/multi-word-component-names': 'off',
     },
