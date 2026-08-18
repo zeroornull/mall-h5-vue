@@ -24,6 +24,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "vite.config.ts",
-    "mock/**/*.ts"
+    "vitest.config.ts",
+    "mock/**/*.ts",
+    "tests/**/*.ts"
   ]
 }

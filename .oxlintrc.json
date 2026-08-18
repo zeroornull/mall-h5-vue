@@ -12,6 +12,7 @@
   },
   "rules": {
     "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-underscore-dangle": ["warn", { "allow": ["_retryCount"] }],
     "no-debugger": "error",
     "eqeqeq": ["error", "smart"],
     "import/no-unassigned-import": [

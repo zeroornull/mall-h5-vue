@@ -12,9 +12,13 @@ dist
 dist-ssr
 *.local
 
+# 本地 Mock 的持久化数据（用户/登录态）
+mock/.data.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
 .DS_Store
 *.suo

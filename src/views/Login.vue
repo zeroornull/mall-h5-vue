@@ -87,6 +87,7 @@
 // 登录 / 注册双模式，type 状态切换两套 van-form。
 // 原 CDN logo 图已停服，改用 vant 内置图标 + 站名。
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { md5 } from 'js-md5'
 import { showFailToast, showSuccessToast } from 'vant'
 import 'vant/es/toast/style'
@@ -95,6 +96,8 @@ import { login, register } from '@/service/user'
 import { setLocal } from '@/utils'
 
 type Mode = 'login' | 'register'
+
+const route = useRoute()
 
 const type = ref<Mode>('login')
 const verifyRef = ref<InstanceType<typeof VueImageVerify> | null>(null)
@@ -131,10 +134,12 @@ const onLogin = async () => {
       passwordMd5: md5(password.value),
     })
     setLocal('token', token)
-    // 与原实现一致整页刷新回首页，顺带重置全部内存状态。
+    // 与原实现一致整页刷新，顺带重置全部内存状态。
     // 本项目请求层每次请求实时读 token，router.push 其实也能生效，
-    // 但原实现的 axios 默认头只在模块加载时读一次 token，必须强刷才能带上新 token
-    window.location.href = '/'
+    // 但原实现的 axios 默认头只在模块加载时读一次 token，必须强刷才能带上新 token。
+    // 被路由守卫拦下来的场景带有 redirect，登录后回到原目标页
+    const redirect = (route.query.redirect as string) ?? '/home'
+    window.location.href = `/#${redirect}`
   } catch {
     // 失败提示已由请求拦截器统一弹出
   }
